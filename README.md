@@ -1,1 +1,1 @@
-# Only-trying-to-learn-Java-JPA
+# Only trying to learn java 🐗 - JPA
