@@ -1,22 +1,18 @@
 import java.util.Date;
 
 import domain.Users.Users;
-import repository.BaseRepository;
 import repository.UserRepository;
 
 public class App {
     public static void main(String[] args) throws Exception {
-       /* Users user = new Users();
-        user.setBirthday(new Date());
-        user.setName("Uasdsapldaspldasdl");
+      
         UserRepository repo = new UserRepository();
-        repo.create(user);*/
-        BaseRepository<Users> dao = new BaseRepository<>(Users.class);
+        Users createdUser = repo.create("exemplo kdoaksodkaoskdakso skdos ", new Date());
 
-        Users user = dao.getEntityByUuid("18c13c7c-0904-4590-bc75-c6a2730ed947");
+        Users user = repo.findUserByUuid(createdUser.getUuid());
 
         if(user == null){
-            System.out.println("Its null");
+            System.out.println("Find by uuid not works!");
         }else{
             System.out.println("Find by uuid works!");
             System.out.println(user.getName());

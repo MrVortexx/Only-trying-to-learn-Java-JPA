@@ -7,16 +7,13 @@ import domain.Users.Users;
 public class UserRepository{
     private BaseRepository<Users> dao;
 
-    UserRepository(){
+    public UserRepository(){
         dao = new BaseRepository<>(Users.class);
     }
-
-   Users findUserByUuid(String uuid){
-       return dao.getEntityByUuid(uuid);
-   }
-
-
-   Users create(String name, Date birthday){
+    public Users findUserByUuid(String uuid){
+        return dao.getEntityByUuid(uuid);
+    }
+    public Users create(String name, Date birthday){
        Users user = new Users();
 
        user.setBirthday(birthday);
